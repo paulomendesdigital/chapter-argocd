@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chapter-argocd
+spec:
+  selector:
+    matchLabels:
+      app: chapter-pod-argocd
+  template:
+    metadata:
+      labels:
+        app: chapter-pod-argocd
+    spec:
+      containers:
+        - name: chapter-container-argocd
+          image: paulomendesdigital/green-pod
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chapter-argocd-svc
+spec:
+  selector:
+    app: chapter-pod-argocd
+  ports:
+    - port: 80
+      targetPort: 80
