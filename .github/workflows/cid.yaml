@@ -49,6 +49,10 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -am "Update image tag to ${{ github.sha }}"
 
+      - name: Pull Latest Changes
+        run: |
+          git pull origin main --rebase
+
       - name: Push Changes
         uses: ad-m/github-push-action@v0.6.0
         with:
