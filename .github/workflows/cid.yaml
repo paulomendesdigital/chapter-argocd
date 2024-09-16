@@ -22,7 +22,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/chapter-argocd:${{ github.sha }},${{ secrets.DOCKER_USERNAME }}/chapter-argocd:lastest
+          tags: ${{ secrets.DOCKER_USERNAME }}/chapter-argocd:${{ github.sha }},${{ secrets.DOCKER_USERNAME }}/chapter-argocd:latest
 
   deploy:
     name: Deploy
@@ -54,6 +54,5 @@ jobs:
           git pull origin main --rebase
 
       - name: Push Changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin main
