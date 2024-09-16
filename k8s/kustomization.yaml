@@ -1,4 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - deployment.yaml
+- deployment.yaml
+images:
+- name: chapter-argocd
+  newName: paulomendesdigital/chapter-argocd
+  newTag: ac8abf9fd3e4026b76a39c2d7b0f613d93241f85
