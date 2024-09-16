@@ -37,7 +37,7 @@ jobs:
         with:
           kustomize-version: v3.6.1
 
-      - name: Update Kubernetes Manisfests
+      - name: Update Kubernetes Manifests
         run: |
           cd k8s
           kustomize edit set image chapter-argocd=${{ secrets.DOCKER_USERNAME }}/chapter-argocd:${{ github.sha }}
