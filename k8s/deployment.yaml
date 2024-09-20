@@ -6,6 +6,7 @@ spec:
   selector:
     matchLabels:
       app: chapter-pod-argocd
+      namespace: chapter-argocd
   template:
     metadata:
       labels:
@@ -22,6 +23,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: chapter-argocd-svc
+  namespace: chapter-argocd
 spec:
   selector:
     app: chapter-pod-argocd
