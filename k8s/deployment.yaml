@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: chapter-argocd
+  namespace: chapter-argocd
 spec:
   selector:
     matchLabels:
       app: chapter-pod-argocd
-      namespace: chapter-argocd
   template:
     metadata:
       labels:
