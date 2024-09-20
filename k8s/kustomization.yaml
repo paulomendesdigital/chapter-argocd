@@ -5,4 +5,4 @@ resources:
 images:
 - name: chapter-argocd
   newName: paulomendesdigital/chapter-argocd
-  newTag: 2a2cfec9f3ddf878087c71a4666e29ca7d1dedaf
+  newTag: d8ad19171b91c96a6132e10fe35d39033d1c96bf
